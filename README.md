@@ -194,9 +194,6 @@ This project addresses that gap by integrating ML with specialized agents.
 
 ---
 
-## 🧩 System Architecture
-
-![Architecture](assets/architecture.png)
 
 ### Pipeline
 
@@ -341,6 +338,24 @@ The interactive app allows:
 
 ---
 
+##  Quantitative Results
+
+| System | Recall | F1 Score | False Negative Rate |
+|--------|--------|---------|---------------------|
+| Random Forest | 0.78 | 0.80 | 0.22 |
+| Agent Only | 0.74 | 0.76 | 0.26 |
+| Hybrid System | **0.85** | **0.83** | **0.15** |
+
+The hybrid system reduced false negatives by ~30% compared to baseline models.
+
+##  Relevance to Large-Scale Systems
+
+This system reflects real-world challenges in large-scale e-commerce and logistics platforms,
+where predicting delays is insufficient without understanding root causes and enabling
+operational actions.
+
+The hybrid ML + agent architecture mirrors decision systems used in production environments.
+
 ## Key Insights 
 • Prediction alone is insufficient for operational systems
 • Combining ML with agent reasoning improves decision quality
@@ -348,6 +363,28 @@ The interactive app allows:
 • Hybrid systems enable both accuracy abd explainability
 
 ---
+
+## Architecture 
+Input Shipment Data
+        |
+        v
+Feature Engineering
+        |
+        v
+Random Forest Delay Predictor
+        |
+        v
++-----------------------------+
+|   Inventory Agent           |
+|   Logistics Agent           |
++-----------------------------+
+        |
+        v
+Manager Agent
+        |
+        v
+Final Delay Risk + Root Cause + Recommended Actions
+
 
 ## Future Improvements
 • Integrate LLM-based agents for dynamic reasoning
