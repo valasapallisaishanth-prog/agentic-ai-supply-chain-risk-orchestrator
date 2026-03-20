@@ -1,4 +1,3 @@
-# agentic-ai-supply-chain-risk-orchestrator
 # Agentic AI Supply Chain Risk Orchestrator
 
 ## Overview
